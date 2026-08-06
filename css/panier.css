@@ -1,0 +1,497 @@
+/* ===================================================
+   PAGE PANIER - TEMPS LIBRE
+=================================================== */
+
+:root{
+    --vert:#2E7D32;
+    --vert-hover:#256728;
+    --jaune:#FFC107;
+    --jaune-hover:#F4B400;
+    --rose:#FFF7F5;
+    --blanc:#FFFFFF;
+    --gris:#666;
+    --texte:#333;
+    --bordure:#ececec;
+}
+
+/* ===============================
+   BREADCRUMB
+================================*/
+
+.breadcrumb-section{
+
+    background:var(--rose);
+
+    padding:60px 0;
+
+    text-align:center;
+
+}
+
+.breadcrumb-section nav{
+
+    margin-bottom:15px;
+
+}
+
+.breadcrumb-section nav a{
+
+    color:var(--vert);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.breadcrumb-section nav span{
+
+    color:#777;
+
+    margin:0 8px;
+
+}
+
+.breadcrumb-section h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:var(--texte);
+
+}
+
+.breadcrumb-section h1 i{
+
+    color:var(--jaune);
+
+    margin-right:10px;
+
+}
+
+/* ===============================
+   SECTION PANIER
+================================*/
+
+.cart-section{
+
+    background:var(--rose);
+
+    padding:70px 0;
+
+}
+
+/* ===============================
+   CARTE PRINCIPALE
+================================*/
+
+.cart-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+/* ===============================
+   TABLEAU
+================================*/
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#F8F8F8;
+
+}
+
+.table thead th{
+
+    border:none;
+
+    color:var(--texte);
+
+    font-size:17px;
+
+    font-weight:700;
+
+    padding:18px;
+
+}
+
+.table tbody td{
+
+    vertical-align:middle;
+
+    padding:20px 15px;
+
+}
+
+/* ===============================
+   IMAGE PRODUIT
+================================*/
+
+.product-image{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ===============================
+   NOM PRODUIT
+================================*/
+
+.product-name{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--texte);
+
+}
+
+.product-description{
+
+    font-size:14px;
+
+    color:var(--gris);
+
+}
+
+/* ===============================
+   PRIX
+================================*/
+
+.product-price{
+
+    font-weight:700;
+
+    color:var(--vert);
+
+    font-size:18px;
+
+}
+
+/* ===============================
+   QUANTITE
+================================*/
+
+.quantity-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.qty-btn{
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--vert);
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.qty-btn:hover{
+
+    background:var(--vert-hover);
+
+}
+
+.qty-value{
+
+    font-weight:700;
+
+    min-width:20px;
+
+    text-align:center;
+
+}
+
+/* ===============================
+   SUPPRIMER
+================================*/
+
+.remove-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ffe5e5;
+
+    color:#d32f2f;
+
+    transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+    background:#d32f2f;
+
+    color:white;
+
+}
+
+/* ===============================
+   RESUME
+================================*/
+
+.summary-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.summary-card h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--texte);
+
+    margin-bottom:25px;
+
+}
+
+.summary-line{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    color:var(--gris);
+
+    font-size:17px;
+
+}
+
+.summary-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:23px;
+
+    font-weight:700;
+
+    color:var(--vert);
+
+    margin:25px 0;
+
+}
+
+/* ===============================
+   BOUTON COMMANDE
+================================*/
+
+.btn-checkout{
+
+    width:100%;
+
+    display:block;
+
+    text-align:center;
+
+    background:var(--vert);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    transition:.3s;
+
+}
+
+.btn-checkout:hover{
+
+    background:var(--vert-hover);
+
+    color:white;
+
+}
+
+/* ===============================
+   CONTINUER LES ACHATS
+================================*/
+
+.btn-continue{
+
+    width:100%;
+
+    display:block;
+
+    text-align:center;
+
+    background:var(--jaune);
+
+    color:#333;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-continue:hover{
+
+    background:var(--jaune-hover);
+
+    color:#222;
+
+}
+
+/* ===============================
+   HOVER LIGNE
+================================*/
+
+.table tbody tr{
+
+    transition:.3s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#FCFCFC;
+
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+
+@media(max-width:991px){
+
+.summary-card{
+
+    margin-top:40px;
+
+    position:relative;
+
+    top:0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.breadcrumb-section h1{
+
+    font-size:30px;
+
+}
+
+.table{
+
+    font-size:14px;
+
+}
+
+.cart-card{
+
+    padding:15px;
+
+}
+
+.product-image{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+.summary-card{
+
+    padding:20px;
+
+}
+
+.summary-card h3{
+
+    font-size:22px;
+
+}
+
+.summary-total{
+
+    font-size:20px;
+
+}
+
+}
