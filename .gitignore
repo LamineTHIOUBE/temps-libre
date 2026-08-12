@@ -1,0 +1,21 @@
+# Fichiers de configuration sensibles
+config.php
+.env
+
+# Sauvegardes de base de données
+*.sql
+
+# Fichiers de logs
+*.log
+
+# Cache
+cache/
+tmp/
+
+# Fichiers temporaires Windows
+Thumbs.db
+Desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
