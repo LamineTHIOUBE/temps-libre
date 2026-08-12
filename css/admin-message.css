@@ -1,0 +1,733 @@
+/* =========================================================
+   TEMPS LIBRE — DÉTAIL MESSAGE
+   ========================================================= */
+
+:root {
+
+    --vert: #2E7D32;
+    --jaune: #FFC107;
+    --rouge: #C62828;
+    --fond: #FFFDF7;
+    --blanc: #FFFFFF;
+    --texte: #333333;
+    --gris: #777777;
+    --bordure: #E8E8E8;
+
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    background: var(--fond);
+
+    color: var(--texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+.admin-message-container {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-message-header {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: var(--blanc);
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+.back-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--vert);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.back-link:hover {
+
+    text-decoration: underline;
+
+}
+
+
+.admin-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.admin-title > i {
+
+    color: var(--vert);
+
+    font-size: 22px;
+
+}
+
+
+.admin-title strong {
+
+    display: block;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: var(--vert);
+
+}
+
+
+.admin-title span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.message-main {
+
+    width: min(900px, 90%);
+
+    margin: auto;
+
+    padding: 50px 0 70px;
+
+}
+
+
+.message-page-title span {
+
+    color: var(--vert);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.message-page-title h1 {
+
+    margin-top: 6px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 30px;
+
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.message-detail-card {
+
+    margin-top: 30px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.message-contact {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 25px;
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+.message-avatar {
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(46, 125, 50, 0.1);
+
+    color: var(--vert);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+.message-contact-info {
+
+    flex: 1;
+
+}
+
+
+.message-contact-info h2 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+}
+
+
+.message-contact-info a {
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+}
+
+
+.message-contact-info a:hover {
+
+    color: var(--vert);
+
+}
+
+
+.message-status {
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.message-status.nouveau {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #927000;
+
+}
+
+
+.message-status.lu {
+
+    background: rgba(33, 150, 243, 0.1);
+
+    color: #1976D2;
+
+}
+
+
+.message-status.traite {
+
+    background: rgba(46, 125, 50, 0.1);
+
+    color: var(--vert);
+
+}
+
+
+/* =========================================================
+   INFORMATIONS
+   ========================================================= */
+
+.message-info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+.message-info-item {
+
+    padding: 22px 25px;
+
+    border-right: 1px solid var(--bordure);
+
+}
+
+
+.message-info-item:last-child {
+
+    border-right: none;
+
+}
+
+
+.message-info-item span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+.message-info-item span i {
+
+    margin-right: 5px;
+
+    color: var(--vert);
+
+}
+
+
+.message-info-item strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message-content {
+
+    padding: 28px 25px;
+
+}
+
+
+.message-content-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.message-content-title i {
+
+    color: var(--vert);
+
+}
+
+
+.message-content-title h3 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+}
+
+
+.message-text {
+
+    padding: 20px;
+
+    background: #FAFAF7;
+
+    border-radius: 12px;
+
+    color: #444444;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    white-space: normal;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.message-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 20px 25px;
+
+    border-top: 1px solid var(--bordure);
+
+}
+
+
+.btn-repondre {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-repondre:hover {
+
+    background: #256628;
+
+    transform: translateY(-2px);
+
+}
+
+
+.btn-retour-messages {
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 25px;
+
+    color: var(--texte);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.btn-retour-messages:hover {
+
+    border-color: var(--vert);
+
+    color: var(--vert);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-message-header {
+
+        padding: 0 5%;
+
+    }
+
+
+    .admin-title span {
+
+        display: none;
+
+    }
+
+
+    .message-main {
+
+        width: 92%;
+
+        padding-top: 30px;
+
+    }
+
+
+    .message-page-title h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .message-info-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .message-info-item {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--bordure);
+
+    }
+
+
+    .message-info-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .message-contact {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .message-status {
+
+        margin-left: 67px;
+
+    }
+
+
+    .message-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .btn-repondre,
+    .btn-retour-messages {
+
+        justify-content: center;
+
+        text-align: center;
+
+    }
+
+}
+
+.admin-title img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+
+
+/* =========================================================
+   BOUTON TRAITER
+   ========================================================= */
+
+.form-traiter {
+
+    display: inline-block;
+
+}
+
+
+.btn-traiter {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--vert);
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: var(--vert);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-traiter:hover {
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* =========================================================
+   BOUTON SUPPRIMER
+   ========================================================= */
+
+.form-supprimer {
+
+    display: inline-block;
+
+}
+
+
+.btn-supprimer {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: 1px solid #C62828;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #C62828;
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-supprimer:hover {
+
+    background: #C62828;
+
+    color: #FFFFFF;
+
+    transform: translateY(-2px);
+
+}
+

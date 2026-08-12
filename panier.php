@@ -35,15 +35,7 @@ session_start();
 
     <div class="container">
 
-        <nav>
-
-            <a href="index.php">Accueil</a>
-
-            <span>/</span>
-
-            <span>Mon panier</span>
-
-        </nav>
+        
 
         <h1>
 
@@ -136,13 +128,13 @@ session_start();
 
                     </div>
 
-                    <a href="commande.php" class="btn-checkout">
+                    <a href="order.php" class="btn-checkout">
 
                         Passer la commande
 
                     </a>
 
-                    <a href="produits.php" class="btn-continue">
+                    <a href="products.php" class="btn-continue">
 
                         Continuer les achats
 
@@ -163,6 +155,10 @@ session_start();
 <script src="js/panier.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/panier.js"></script>
+
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

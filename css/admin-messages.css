@@ -1,0 +1,1419 @@
+/* =========================================================
+   TEMPS LIBRE — ADMINISTRATION MESSAGES
+   ========================================================= */
+
+:root {
+
+    --vert: #2E7D32;
+
+    --jaune: #FFC107;
+
+    --rouge: #C62828;
+
+    --orange: #F57C00;
+
+    --fond: #FFFDF7;
+
+    --blanc: #FFFFFF;
+
+    --texte: #333333;
+
+    --gris: #777777;
+
+    --bordure: #E8E8E8;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    background: var(--fond);
+
+    color: var(--texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.admin-container {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-header {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: var(--blanc);
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+.admin-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.admin-logo {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+}
+
+
+.admin-brand h1 {
+
+    margin: 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 20px;
+
+    color: var(--vert);
+
+}
+
+
+.admin-brand span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+.btn-retour {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--vert);
+
+    border-radius: 25px;
+
+    color: var(--vert);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-retour:hover {
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.admin-main {
+
+    width: min(1400px, 90%);
+
+    margin: 0 auto;
+
+    padding: 45px 0 60px;
+
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--vert);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.page-title h2 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 32px;
+
+    color: var(--texte);
+
+}
+
+
+.page-title p {
+
+    margin-top: 8px;
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   STATISTIQUES
+   ========================================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+
+.stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 16px;
+
+}
+
+
+.stat-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+}
+
+
+.stat-icon.green {
+
+    background: rgba(46, 125, 50, 0.1);
+
+    color: var(--vert);
+
+}
+
+
+.stat-icon.yellow {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #B88600;
+
+}
+
+
+.stat-icon.blue {
+
+    background: rgba(33, 150, 243, 0.1);
+
+    color: #1976D2;
+
+}
+
+
+.stat-icon.red {
+
+    background: rgba(198, 40, 40, 0.1);
+
+    color: var(--rouge);
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+.stat-card strong {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 24px;
+
+}
+
+
+/* =========================================================
+   CARTE MESSAGES
+   ========================================================= */
+
+.messages-card {
+
+    margin-top: 30px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+}
+
+
+.messages-card-header {
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+.messages-card-header h3 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+}
+
+
+.messages-card-header p {
+
+    margin-top: 5px;
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   TABLEAU
+   ========================================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.messages-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.messages-table th {
+
+    padding: 16px 24px;
+
+    background: #FAFAF7;
+
+    color: var(--gris);
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.messages-table td {
+
+    padding: 18px 24px;
+
+    border-top: 1px solid var(--bordure);
+
+    vertical-align: middle;
+
+}
+
+
+.messages-table tbody tr {
+
+    transition: 0.2s;
+
+}
+
+
+.messages-table tbody tr:hover {
+
+    background: #FFFEF8;
+
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-cell {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(46, 125, 50, 0.1);
+
+    color: var(--vert);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 700;
+
+}
+
+
+.contact-cell strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+
+.contact-cell span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+.subject {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.date {
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   STATUT
+   ========================================================= */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.status.nouveau {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #9A7200;
+
+}
+
+
+.status.lu {
+
+    background: rgba(33, 150, 243, 0.1);
+
+    color: #1976D2;
+
+}
+
+
+.status.traite {
+
+    background: rgba(46, 125, 50, 0.1);
+
+    color: var(--vert);
+
+}
+
+
+/* =========================================================
+   BOUTON VOIR
+   ========================================================= */
+
+.btn-voir {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    background: rgba(46, 125, 50, 0.08);
+
+    color: var(--vert);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-voir:hover {
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+}
+
+
+/* =========================================================
+   AUCUN MESSAGE
+   ========================================================= */
+
+.empty-messages {
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+}
+
+
+.empty-messages > i {
+
+    font-size: 40px;
+
+    color: #CCCCCC;
+
+}
+
+
+.empty-messages h3 {
+
+    margin-top: 15px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+}
+
+
+.empty-messages p {
+
+    margin-top: 5px;
+
+    color: var(--gris);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .admin-header {
+
+        padding: 0 5%;
+
+    }
+
+
+    .admin-brand span {
+
+        display: none;
+
+    }
+
+
+    .btn-retour {
+
+        padding: 9px 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    .admin-main {
+
+        width: 92%;
+
+        padding-top: 30px;
+
+    }
+
+
+    .page-title h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .messages-card-header {
+
+        padding: 20px;
+
+    }
+
+}
+
+.admin-logo img {
+
+    width: 42px;
+    height: 42sspx;
+
+    object-fit: contain;
+
+}
+
+
+
+/* =========================================================
+   BOUTON DÉCONNEXION
+   ========================================================= */
+
+.btn-logout {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border: 1px solid #C62828;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #C62828;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-logout:hover {
+
+    background: #C62828;
+
+    color: #FFFFFF;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* =========================================================
+   STATISTIQUES ADMINISTRATION
+   ========================================================= */
+
+.admin-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin: 30px 0;
+
+}
+
+
+.stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 120px;
+
+    padding: 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E8E8E8;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+
+    transition: 0.3s;
+
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.07);
+
+}
+
+
+/* =========================================================
+   ICÔNES
+   ========================================================= */
+
+.stat-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+
+}
+
+
+.stat-total .stat-icon {
+
+    background: rgba(51, 51, 51, 0.08);
+
+    color: #333333;
+
+}
+
+
+.stat-nouveau .stat-icon {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #C99600;
+
+}
+
+
+.stat-lu .stat-icon {
+
+    background: rgba(33, 150, 243, 0.10);
+
+    color: #1976D2;
+
+}
+
+
+.stat-traite .stat-icon {
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: #2E7D32;
+
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.stat-content {
+
+    min-width: 0;
+
+}
+
+
+.stat-content span {
+
+    display: block;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.stat-content strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #333333;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+}
+
+
+.stat-content small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .admin-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .admin-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMINISTRATEUR CONNECTÉ
+   ========================================================= */
+
+.admin-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.admin-user-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: #2E7D32;
+
+    font-size: 14px;
+
+}
+
+
+.admin-user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.3;
+
+}
+
+
+.admin-user-info span {
+
+    color: #999999;
+
+    font-size: 10px;
+
+}
+
+
+.admin-user-info strong {
+
+    color: #333333;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RECHERCHE ET FILTRES
+   ========================================================= */
+
+.messages-filters {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+    padding: 18px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.03);
+
+}
+
+
+/* =========================================================
+   ZONE DE RECHERCHE
+   ========================================================= */
+
+.search-box {
+
+    position: relative;
+
+    flex: 1;
+
+}
+
+
+.search-box > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #999999;
+
+    font-size: 13px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 15px 0 42px;
+
+    border: 1px solid #E2E2E2;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #FAFAF7;
+
+    color: var(--texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+
+}
+
+
+.search-box input:focus {
+
+    border-color: var(--vert);
+
+    background: var(--blanc);
+
+    box-shadow:
+        0 0 0 3px rgba(46, 125, 50, 0.08);
+
+}
+
+
+/* =========================================================
+   FILTRE STATUT
+   ========================================================= */
+
+.filter-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.filter-box label {
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.filter-box select {
+
+    height: 46px;
+
+    min-width: 180px;
+
+    padding: 0 35px 0 13px;
+
+    border: 1px solid #E2E2E2;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #FAFAF7;
+
+    color: var(--texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.filter-box select:focus {
+
+    border-color: var(--vert);
+
+    box-shadow:
+        0 0 0 3px rgba(46, 125, 50, 0.08);
+
+}
+
+
+/* =========================================================
+   BOUTON RECHERCHER
+   ========================================================= */
+
+.btn-search {
+
+    height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-search:hover {
+
+    background: #256628;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   BOUTON RÉINITIALISER
+   ========================================================= */
+
+.btn-reset {
+
+    height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border: 1px solid #DDDDDD;
+
+    border-radius: 10px;
+
+    background: var(--blanc);
+
+    color: var(--gris);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-reset:hover {
+
+    border-color: var(--rouge);
+
+    color: var(--rouge);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE RECHERCHE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .messages-filters {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .search-box {
+
+        width: 100%;
+
+    }
+
+
+    .filter-box select {
+
+        width: 100%;
+
+    }
+
+
+    .btn-search,
+    .btn-reset {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   BOUTON MARQUER COMME LU
+   ========================================================= */
+
+.btn-lu {
+
+    width: 32px;
+
+    height: 32px;
+
+    margin-left: 5px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(33, 150, 243, 0.08);
+
+    color: #1976D2;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-lu:hover {
+
+    background: #1976D2;
+
+    color: #FFFFFF;
+
+    transform: translateY(-2px);
+
+}
+
+.form-lu {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}

@@ -224,19 +224,11 @@ PRODUITS
 ================================ -->
 
 
-<section class="products-section">
-
-
-<div class="container">
-
-
 <div class="row g-4">
 
 
+<?php foreach($produits as $produit): ?>
 
-
-
-<!-- PRODUIT 1 -->
 
 <div class="col-lg-4 col-md-6">
 
@@ -244,27 +236,30 @@ PRODUITS
 <div class="product-card">
 
 
-<img src="assets/images/bissap.jpg"
-class="product-img"
-alt="Jus de bissap">
+<img src="uploads/produits/<?php echo $produit['image']; ?>"
+class="product-img">
 
 
 <div class="product-content">
 
 
 <h3>
-Jus de Bissap
+
+<?= $produit['nom']; ?>
+
 </h3>
 
 
 <p>
-Une boisson naturelle riche en saveurs.
+
+<?= $produit['description']; ?>
+
 </p>
 
 
 <div class="price">
 
-1500 FCFA
+<?= number_format($produit['prix'],0,' ',' '); ?> FCFA
 
 </div>
 
@@ -273,15 +268,17 @@ Une boisson naturelle riche en saveurs.
 <button 
 class="btn add-cart"
 
+
 onclick="ajouterAuPanier({
 
-id:1,
+id:<?= $produit['id']; ?>,
 
-nom:'Jus de Bissap',
+nom:'<?= $produit['nom']; ?>',
 
-prix:1500,
+prix:<?= $produit['prix']; ?>,
 
-image:'assets/images/bissap.jpg'
+image:'uploads/produits/<?= $produit['image']; ?>'
+
 
 })">
 
@@ -291,78 +288,6 @@ Ajouter au panier
 </button>
 
 
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- PRODUIT 2 -->
-
-
-<div class="col-lg-4 col-md-6">
-
-
-<div class="product-card">
-
-
-<img src="assets/images/gingembre.jpg"
-class="product-img"
-alt="Jus gingembre">
-
-
-
-<div class="product-content">
-
-
-<h3>
-Jus de Gingembre
-</h3>
-
-
-<p>
-Un goût intense et naturel.
-</p>
-
-
-
-<div class="price">
-
-1500 FCFA
-
-</div>
-
-
-
-<button 
-class="btn add-cart"
-
-onclick="ajouterAuPanier({
-
-id:2,
-
-nom:'Jus de Gingembre',
-
-prix:1500,
-
-image:'assets/images/gingembre.jpg'
-
-})">
-
-
-Ajouter au panier
-
-</button>
-
 
 </div>
 
@@ -374,84 +299,10 @@ Ajouter au panier
 
 
 
-
-
-
-
-<!-- PRODUIT 3 -->
-
-
-<div class="col-lg-4 col-md-6">
-
-
-<div class="product-card">
-
-
-<img src="assets/images/bouy.jpg"
-class="product-img"
-alt="Jus bouy">
-
-
-<div class="product-content">
-
-
-<h3>
-Jus de Bouy
-</h3>
-
-
-<p>
-La fraîcheur du fruit du baobab.
-</p>
-
-
-
-<div class="price">
-
-2000 FCFA
-
-</div>
-
-
-
-<button 
-class="btn add-cart"
-
-onclick="ajouterAuPanier({
-
-id:3,
-
-nom:'Jus de Bouy',
-
-prix:2000,
-
-image:'assets/images/bouy.jpg'
-
-})">
-
-
-Ajouter au panier
-
-</button>
+<?php endforeach; ?>
 
 
 </div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-</div>
-
-</div>
-
-
-</section>
 
 
 

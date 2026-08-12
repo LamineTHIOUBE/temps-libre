@@ -1829,6 +1829,1089 @@ display:none;
 }
 
 
+/*====================================================
+            POURQUOI NOUS FAIRE CONFIANCE
+====================================================*/
+
+.trust-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:90px 0;
+
+    background:
+    radial-gradient(circle at center,
+    #ffffff 0%,
+    #FFFDF7 100%);
+
+}
+
+/* image */
+
+.trust-image{
+
+    text-align:center;
+
+}
+
+.trust-image img{
+
+    width:100%;
+
+    max-width:500px;
+    max-height: 100%;
+
+    transition:.4s;
+
+    filter:drop-shadow(0 12px 25px rgba(0,0,0,.12));
+
+}
+
+.trust-image:hover img{
+
+    transform:translateY(-8px);
+
+}
+
+/* texte */
+
+.trust-content{
+
+    max-width:500px;
+
+}
+
+.trust-content h2{
+
+    font-size:46px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    color:#222;
+
+    margin-bottom:18px;
+
+}
+
+/* ligne jaune */
+
+.title-line{
+
+    display:block;
+
+    width:58px;
+
+    height:4px;
+
+    border-radius:50px;
+
+    background:#FFC107;
+
+    margin-bottom:28px;
+
+}
+
+/* liste */
+
+.trust-content ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.trust-content li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+    color:#444;
+
+}
+
+/* icônes */
+
+.trust-content li i{
+
+    color:#2E7D32;
+
+    font-size:22px;
+
+}
+
+/* feuille */
+
+.leaf-right{
+
+    position:absolute;
+
+    right:40px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:160px;
+
+    opacity:.12;
+
+}
+
+/* responsive */
+
+@media(max-width:991px){
+
+.trust-section{
+
+padding:70px 0;
+
+}
+
+.trust-content{
+
+margin:auto;
+
+margin-top:45px;
+
+text-align:center;
+
+}
+
+.title-line{
+
+margin:20px auto 30px;
+
+}
+
+.trust-content li{
+
+justify-content:center;
+
+}
+
+.leaf-right{
+
+display:none;
+
+}
+
+}
+
+
+/*==================================================
+            PROCESSUS DE FABRICATION
+==================================================*/
+
+.process-section{
+
+    position:relative;
+
+    padding:90px 0;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        #FFFFFF 55%,
+        #FFF9F0 100%
+    );
+
+    overflow:hidden;
+
+}
+
+/* titre */
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-header h2{
+
+    font-size:36px;
+    font-weight:700; 
+
+    
+
+    color:#222;
+
+}
+
+.section-header span{
+
+    color:#2E7D32;
+
+}
+
+.title-divider{
+
+    width:60px;
+
+    height:4px;
+
+    background:#FFC107;
+
+    border-radius:50px;
+
+    margin:15px auto 0;
+
+}
+
+/* ligne */
+
+.process-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:flex-start;
+
+}
+
+.process-line{
+
+    position:absolute;
+
+    top:40px;
+
+    left:11%;
+
+    right:11%;
+
+    border-top:2px dashed #6D8F6A;
+
+    z-index:0;
+
+}
+
+/* cartes */
+
+.process-card{
+
+    width:185px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* cercle */
+
+.process-icon{
+
+    position:relative;
+
+    width:82px;
+    height:82px;
+
+    border:2px solid #2E7D32;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    transition:.35s;
+
+}
+
+.process-icon img{
+
+    width:80px;
+
+}
+
+/* numéro */
+
+.process-icon span{
+
+    position:absolute;
+
+    right:-6px;
+
+    bottom:-6px;
+
+    width:26px;
+    height:26px;
+    font-size:12px;
+
+    border-radius:50%;
+
+    background:#2E7D32;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+}
+
+/* titre */
+
+.process-card h3{
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    color:#2E7D32;
+
+    font-weight:700;
+
+}
+
+/* texte */
+
+.process-card p{
+
+    margin-top:10px;
+
+    font-size:16px;
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+
+/* animation */
+
+.process-card:hover .process-icon{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(46,125,50,.20);
+
+}
+
+/* responsive */
+
+@media(max-width:991px){
+
+.process-wrapper{
+
+flex-wrap:wrap;
+
+gap:50px;
+
+justify-content:center;
+
+}
+
+.process-line{
+
+display:none;
+
+}
+
+.process-card{
+
+width:260px;
+
+}
+
+.section-header h2{
+
+font-size:34px;
+
+}
+
+}
+
+
+/*=========================================
+        STATISTIQUES
+=========================================*/
+
+.stats-section{
+
+    position:relative;
+
+    padding:45px 0;
+
+    overflow:hidden;
+
+    background-image:
+    linear-gradient(rgba(34,90,39,.88),
+    rgba(34,90,39,.88)),
+    url("images/leaf-pattern.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+/* texture supplémentaire */
+
+.stats-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:url("images/leaf-pattern.png");
+
+    background-size:cover;
+
+    opacity:.08;
+
+}
+
+/* contenu */
+
+.stats-section .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* colonnes */
+
+.stat-item{
+
+    position:relative;
+
+    color:#fff;
+
+    padding:15px 10px;
+
+}
+
+/* séparateur */
+
+.stat-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+
+    right:0;
+
+    width:1px;
+
+    height:65px;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.col-lg-3:last-child .stat-item::after{
+
+    display:none;
+
+}
+
+/* icône */
+
+.stat-item i{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+    color:#fff;
+
+}
+
+/* nombre */
+
+.stat-item h2{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    margin-bottom:5px;
+
+}
+
+/* texte */
+
+.stat-item p{
+
+    font-size:20px;
+
+    font-weight:500;
+
+    margin:0;
+
+}
+
+
+/* =====================================================
+   NOTRE ÉQUIPE
+===================================================== */
+
+.team-section {
+
+    position: relative;
+
+    padding: 55px 0 20px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #ffffff 45%,
+            #FFFDF7 100%
+        );
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   EN-TÊTE
+===================================================== */
+
+.team-header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+.team-header h2 {
+
+    margin: 0 0 2px;
+
+    color: #222222;
+
+    font-size: 25px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+}
+
+.team-header h3 {
+
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+}
+
+.team-header h3 span {
+
+    color: #2E7D32;
+
+}
+
+
+/* Trait jaune */
+
+.team-line {
+
+    width: 30px;
+
+    height: 3px;
+
+    background: #FFC107;
+
+    border-radius: 10px;
+
+    margin: 7px auto 0;
+
+}
+
+
+/* =====================================================
+   GRILLE DES MEMBRES
+===================================================== */
+
+.team-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    max-width: 710px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =====================================================
+   CARTE
+===================================================== */
+
+.team-card {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 102px;
+
+    padding: 7px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E8E8E8;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* Animation */
+
+.team-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.team-photo {
+
+    flex-shrink: 0;
+
+    width: 82px;
+
+    height: 82px;
+
+    border-radius: 50%;
+
+    padding: 2px;
+
+    border: 2px solid #2E7D32;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+
+}
+
+
+.team-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+}
+
+
+/* =====================================================
+   INFORMATIONS
+===================================================== */
+
+.team-info {
+
+    padding-left: 10px;
+
+    min-width: 0;
+
+}
+
+
+.team-info h4 {
+
+    margin: 0 0 3px;
+
+    color: #2E7D32;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+}
+
+
+.team-role {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #444444;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+}
+
+
+.team-info p {
+
+    margin: 0;
+
+    color: #555555;
+
+    font-size: 9px;
+
+    line-height: 1.45;
+
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.team-pagination {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 18px;
+
+}
+
+
+.team-pagination span {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #D9D9D9;
+
+}
+
+
+.team-pagination span.active {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #2E7D32;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .team-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 650px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .team-section {
+
+        padding: 45px 15px 20px;
+
+    }
+
+
+    .team-header h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .team-header h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .team-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 380px;
+
+        gap: 15px;
+
+    }
+
+
+    .team-card {
+
+        min-height: 110px;
+
+    }
+
+
+    .team-photo {
+
+        width: 82px;
+
+        height: 82px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CTA FINAL
+===================================================== */
+
+
+
+.cta-final {
+     min-height: 175px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Voile vert */
+
+.cta-final::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+   
+
+    z-index: 1;
+}
+
+/* Contenu */
+
+.cta-final .cta-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+}
+
+/* Texte */
+
+.cta-content {
+    max-width: 650px;
+}
+
+.cta-content h2 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.cta-content p {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+/* Boutons */
+
+.cta-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.cta-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 36px;
+
+    padding: 0 18px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+/* Bouton commander */
+
+.cta-primary {
+    background: #FFC107;
+
+    color: #222222;
+
+    border: 2px solid #FFC107;
+}
+
+.cta-primary:hover {
+    background: #e5aa00;
+
+    border-color: #e5aa00;
+
+    color: #222222;
+
+    transform: translateY(-2px);
+}
+
+/* Bouton contact */
+
+.cta-secondary {
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid #ffffff;
+}
+
+.cta-secondary:hover {
+    background: #ffffff;
+
+    color: #2E7D32;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .cta-final {
+        min-height: 300px;
+
+        background-position: center;
+    }
+
+    .cta-final .cta-container {
+        padding: 0 20px;
+    }
+
+    .cta-content {
+        text-align: center;
+
+        margin: auto;
+    }
+
+    .cta-content h2 {
+        font-size: 25px;
+    }
+
+    .cta-content p {
+        font-size: 14px;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
+
+
 /*======================
         FOOTER
 ======================*/

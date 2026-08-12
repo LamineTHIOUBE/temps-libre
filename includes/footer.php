@@ -9,7 +9,9 @@
             <!-- Section 1 -->
             <div class="footer-column">
                 <a class="navbar-brand" href="#">
-            <img src="images\logo\logo.png" alt="Logo" class="logo">
+                    <div class="footer-logo">
+                         <img src="images\logo\logo.png" alt="Logo">
+                    </div>
                 </a>
 
                 <p class="footer-description">
@@ -38,7 +40,7 @@
                     <li><a href="#apropos">À propos</a></li>
 
                     <li><a href="#produits">Produits</a></li>
-                    
+
                     <li><a href="#contact">Contact</a></li>
 
                 </ul>

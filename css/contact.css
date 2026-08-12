@@ -1,0 +1,1937 @@
+/* =========================================================
+   PAGE CONTACT - TEMPS LIBRE
+   CSS ISOLÉ
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+.page-contact {
+
+    --contact-vert: #2E7D32;
+    --contact-vert-fonce: #1B5E20;
+    --contact-jaune: #FFC107;
+    --contact-orange: #F57C00;
+    --contact-rouge: #C62828;
+
+    --contact-blanc: #FFFFFF;
+    --contact-creme: #FFFDF7;
+
+    --contact-texte: #333333;
+    --contact-texte-clair: #666666;
+
+    --contact-bordure: #E8E8E8;
+
+}
+
+
+/* =========================================================
+   BASE DE LA PAGE
+   ========================================================= */
+
+.page-contact main {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.page-contact .contact-hero,
+.page-contact .contact-section,
+.page-contact .location-section,
+.page-contact .contact-cta {
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+.page-contact .contact-hero p,
+.page-contact .contact-section p,
+.page-contact .location-section p,
+.page-contact .contact-cta p {
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+/* =========================================================
+   HERO CONTACT
+   ========================================================= */
+
+.page-contact .contact-hero {
+
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--contact-creme);
+
+    overflow: hidden;
+
+}
+
+
+/* Cercle décoratif gauche */
+
+.page-contact .contact-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    left: -120px;
+
+    top: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(46, 125, 50, 0.08);
+
+}
+
+
+/* Cercle décoratif droit */
+
+.page-contact .contact-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 240px;
+
+    right: -80px;
+
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.14);
+
+}
+
+
+/* Conteneur */
+
+.page-contact .contact-hero .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* Contenu */
+
+.page-contact .contact-hero-content {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 65px 20px;
+
+}
+
+
+/* Petit titre */
+
+.page-contact .contact-hero-subtitle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: var(--contact-vert);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* Icône feuille */
+
+.page-contact .contact-hero-subtitle i {
+
+    color: var(--contact-jaune);
+
+    font-size: 17px;
+
+}
+
+
+/* Grand titre */
+
+.page-contact .contact-hero h1 {
+
+    margin: 0 0 20px;
+
+    color: var(--contact-texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: clamp(44px, 6vw, 68px);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+}
+
+
+/* Partie verte du titre */
+
+.page-contact .contact-hero h1 span {
+
+    color: var(--contact-vert);
+
+}
+
+
+/* Description */
+
+.page-contact .contact-hero p {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: var(--contact-texte-clair);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   LABELS DE SECTION
+   ========================================================= */
+
+.page-contact .section-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--contact-vert);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .page-contact .contact-hero {
+
+        min-height: 330px;
+
+    }
+
+
+    .page-contact .contact-hero-content {
+
+        padding: 50px 20px;
+
+    }
+
+
+    .page-contact .contact-hero h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .page-contact .contact-hero p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .page-contact .contact-hero {
+
+        min-height: 300px;
+
+    }
+
+
+    .page-contact .contact-hero-content {
+
+        padding: 40px 15px;
+
+    }
+
+
+    .page-contact .contact-hero-subtitle {
+
+        font-size: 11px;
+
+        letter-spacing: 1.3px;
+
+    }
+
+
+    .page-contact .contact-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .page-contact .contact-hero p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SECTION CONTACT
+   ========================================================= */
+
+.page-contact .contact-section {
+
+    padding: 90px 0;
+
+    background: var(--contact-blanc);
+
+}
+
+
+/* =========================================================
+   COLONNE INFORMATIONS
+   ========================================================= */
+
+.page-contact .contact-info {
+
+    height: 100%;
+
+    padding: 45px;
+
+    border-radius: 24px;
+
+    background: var(--contact-vert);
+
+    color: var(--contact-blanc);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Décoration de la carte */
+
+.page-contact .contact-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    top: -100px;
+
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+}
+
+
+.page-contact .contact-info::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+
+    height: 140px;
+
+    bottom: -70px;
+
+    left: -50px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.12);
+
+}
+
+
+/* Contenu au-dessus des décorations */
+
+.page-contact .contact-info > * {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* Label */
+
+.page-contact .contact-info .section-label {
+
+    color: var(--contact-jaune);
+
+}
+
+
+/* Titre */
+
+.page-contact .contact-info h2 {
+
+    margin: 0 0 18px;
+
+    color: var(--contact-blanc);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+}
+
+
+/* Introduction */
+
+.page-contact .contact-info-intro {
+
+    margin-bottom: 35px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   INFORMATIONS INDIVIDUELLES
+   ========================================================= */
+
+.page-contact .contact-info-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Icône */
+
+.page-contact .contact-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    min-width: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--contact-jaune);
+
+    color: var(--contact-vert-fonce);
+
+    font-size: 17px;
+
+}
+
+
+/* Titre de l'information */
+
+.page-contact .contact-info-text h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--contact-blanc);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+/* Texte */
+
+.page-contact .contact-info-text p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RÉSEAUX SOCIAUX
+   ========================================================= */
+
+.page-contact .contact-social {
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+
+.page-contact .contact-social h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--contact-blanc);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+/* Conteneur réseaux */
+
+.page-contact .social-links {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+/* Boutons réseaux */
+
+.page-contact .social-links a {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: var(--contact-blanc);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* Hover */
+
+.page-contact .social-links a:hover {
+
+    background: var(--contact-jaune);
+
+    color: var(--contact-vert-fonce);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+.page-contact .contact-form-wrapper {
+
+    height: 100%;
+
+    padding: 45px;
+
+    border: 1px solid var(--contact-bordure);
+
+    border-radius: 24px;
+
+    background: var(--contact-blanc);
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* En-tête formulaire */
+
+.page-contact .contact-form-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.page-contact .contact-form-header .section-label {
+
+    margin-bottom: 10px;
+
+}
+
+
+.page-contact .contact-form-header h2 {
+
+    margin: 0 0 12px;
+
+    color: var(--contact-texte);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+}
+
+
+.page-contact .contact-form-header p {
+
+    margin: 0;
+
+    color: var(--contact-texte-clair);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CHAMPS
+   ========================================================= */
+
+.page-contact .form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.page-contact .form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--contact-texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.page-contact .form-group label span {
+
+    color: var(--contact-rouge);
+
+}
+
+
+/* Conteneur champ */
+
+.page-contact .input-wrapper {
+
+    position: relative;
+
+}
+
+
+/* Icône */
+
+.page-contact .input-wrapper > i {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 17px;
+
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    color: var(--contact-vert);
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+}
+
+
+/* Champs input et select */
+
+.page-contact .input-wrapper input,
+.page-contact .input-wrapper select,
+.page-contact .input-wrapper textarea {
+
+    width: 100%;
+
+    border: 1px solid #E1E1E1;
+
+    border-radius: 12px;
+
+    background: #FAFAFA;
+
+    color: var(--contact-texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* Input */
+
+.page-contact .input-wrapper input,
+.page-contact .input-wrapper select {
+
+    height: 52px;
+
+    padding: 0 16px 0 46px;
+
+}
+
+
+/* Textarea */
+
+.page-contact .input-wrapper textarea {
+
+    min-height: 150px;
+
+    padding: 16px 16px 16px 46px;
+
+    resize: vertical;
+
+}
+
+
+/* Placeholder */
+
+.page-contact .input-wrapper input::placeholder,
+.page-contact .input-wrapper textarea::placeholder {
+
+    color: #999;
+
+}
+
+
+/* Focus */
+
+.page-contact .input-wrapper input:focus,
+.page-contact .input-wrapper select:focus,
+.page-contact .input-wrapper textarea:focus {
+
+    border-color: var(--contact-vert);
+
+    background: var(--contact-blanc);
+
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.10);
+
+}
+
+
+/* =========================================================
+   BOUTON ENVOYER
+   ========================================================= */
+
+.page-contact .form-submit {
+
+    margin-top: 10px;
+
+}
+
+
+.page-contact .btn-contact {
+
+    min-height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: var(--contact-vert);
+
+    color: var(--contact-blanc);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* Hover bouton */
+
+.page-contact .btn-contact:hover {
+
+    background: var(--contact-vert-fonce);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.25);
+
+}
+
+
+.page-contact .btn-contact i {
+
+    color: var(--contact-jaune);
+
+}
+
+
+/* =========================================================
+   NOTE CONFIDENTIALITÉ
+   ========================================================= */
+
+.page-contact .form-note {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 15px 0 0;
+
+    color: #888;
+
+    font-size: 12px;
+
+}
+
+
+.page-contact .form-note i {
+
+    color: var(--contact-vert);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETTE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .page-contact .contact-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .page-contact .contact-info,
+    .page-contact .contact-form-wrapper {
+
+        padding: 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .page-contact .contact-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .page-contact .contact-info,
+    .page-contact .contact-form-wrapper {
+
+        padding: 28px 22px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .page-contact .contact-info h2,
+    .page-contact .contact-form-header h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .page-contact .contact-info-intro {
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .page-contact .contact-info-item {
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .page-contact .contact-form-header {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .page-contact .btn-contact {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SECTION LOCALISATION
+   ========================================================= */
+
+.page-contact .location-section {
+
+    padding: 90px 0;
+
+    background: var(--contact-creme);
+
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.page-contact .location-section .section-heading {
+
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+
+.page-contact .location-section .section-heading .section-label {
+
+    margin-bottom: 10px;
+
+}
+
+
+.page-contact .location-section .section-heading h2 {
+
+    margin: 0 0 15px;
+
+    color: var(--contact-texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+}
+
+
+.page-contact .location-section .section-heading h2 span {
+
+    color: var(--contact-vert);
+
+}
+
+
+.page-contact .location-section .section-heading p {
+
+    margin: 0;
+
+    color: var(--contact-texte-clair);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CONTENU LOCALISATION
+   ========================================================= */
+
+.page-contact .location-content {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 320px;
+
+    gap: 25px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.page-contact .map-wrapper {
+
+    min-height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #E8E8E8;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* Faux fond de carte */
+
+.page-contact .map-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+
+        linear-gradient(
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75)
+        ),
+
+        repeating-linear-gradient(
+            45deg,
+            #E7E7E7,
+            #E7E7E7 2px,
+            #F4F4F4 2px,
+            #F4F4F4 45px
+        );
+
+}
+
+
+/* Icône carte */
+
+.page-contact .map-placeholder > i {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: var(--contact-vert);
+
+    color: var(--contact-jaune);
+
+    font-size: 28px;
+
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.25);
+
+}
+
+
+/* Nom */
+
+.page-contact .map-placeholder h3 {
+
+    margin: 0 0 8px;
+
+    color: var(--contact-texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+
+/* Adresse */
+
+.page-contact .map-placeholder p {
+
+    margin: 0 0 5px;
+
+    color: var(--contact-vert);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+/* Repère */
+
+.page-contact .map-placeholder span {
+
+    color: var(--contact-texte-clair);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   CARTE INFORMATIONS ADRESSE
+   ========================================================= */
+
+.page-contact .location-card {
+
+    padding: 35px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-radius: 24px;
+
+    background: var(--contact-vert);
+
+    color: var(--contact-blanc);
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 35px rgba(46, 125, 50, 0.18);
+
+}
+
+
+/* Cercle décoratif */
+
+.page-contact .location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -90px;
+
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+}
+
+
+.page-contact .location-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 110px;
+
+    bottom: -55px;
+
+    left: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.12);
+
+}
+
+
+/* Contenu au-dessus des décorations */
+
+.page-contact .location-card > * {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* Icône */
+
+.page-contact .location-card-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    background: var(--contact-jaune);
+
+    color: var(--contact-vert-fonce);
+
+    font-size: 22px;
+
+}
+
+
+/* Petit label */
+
+.page-contact .location-card-content > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--contact-jaune);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* Titre */
+
+.page-contact .location-card-content h3 {
+
+    margin: 0 0 15px;
+
+    color: var(--contact-blanc);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+/* Texte */
+
+.page-contact .location-card-content p {
+
+    margin: 0 0 15px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* Dernier paragraphe */
+
+.page-contact .location-card-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLETTE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .page-contact .location-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .page-contact .location-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .page-contact .location-card {
+
+        min-height: 280px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .page-contact .location-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .page-contact .location-section .section-heading {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .page-contact .location-section .section-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .page-contact .location-section .section-heading p {
+
+        font-size: 14px;
+
+    }
+
+
+    .page-contact .map-wrapper,
+    .page-contact .map-placeholder {
+
+        min-height: 320px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .page-contact .location-card {
+
+        min-height: 250px;
+
+        padding: 30px 25px;
+
+        border-radius: 18px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.page-contact .contact-cta {
+
+    position: relative;
+
+    padding: 70px 0;
+
+    background: var(--contact-vert-fonce);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   DÉCORATIONS
+   ========================================================= */
+
+.page-contact .contact-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    top: -180px;
+
+    left: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+}
+
+
+.page-contact .contact-cta::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    right: -100px;
+
+    bottom: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.10);
+
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.page-contact .contact-cta .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.page-contact .contact-cta-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.page-contact .contact-cta-text {
+
+    max-width: 720px;
+
+}
+
+
+.page-contact .contact-cta-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--contact-jaune);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.page-contact .contact-cta-text h2 {
+
+    margin: 0 0 15px;
+
+    color: var(--contact-blanc);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+}
+
+
+.page-contact .contact-cta-text h2 span {
+
+    color: var(--contact-jaune);
+
+}
+
+
+.page-contact .contact-cta-text p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   BOUTON CTA
+   ========================================================= */
+
+.page-contact .contact-cta-button {
+
+    flex-shrink: 0;
+
+}
+
+
+.page-contact .contact-cta-button a {
+
+    min-height: 54px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    background: var(--contact-jaune);
+
+    color: var(--contact-vert-fonce);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* Hover */
+
+.page-contact .contact-cta-button a:hover {
+
+    background: var(--contact-blanc);
+
+    color: var(--contact-vert);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* Flèche */
+
+.page-contact .contact-cta-button a i {
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.page-contact .contact-cta-button a:hover i {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLETTE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .page-contact .contact-cta {
+
+        padding: 60px 0;
+
+    }
+
+
+    .page-contact .contact-cta-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .page-contact .contact-cta {
+
+        padding: 50px 0;
+
+    }
+
+
+    .page-contact .contact-cta-content {
+
+        gap: 25px;
+
+    }
+
+
+    .page-contact .contact-cta-text h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .page-contact .contact-cta-text p {
+
+        font-size: 14px;
+
+    }
+
+
+    .page-contact .contact-cta-button {
+
+        width: 100%;
+
+    }
+
+
+    .page-contact .contact-cta-button a {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   VALIDATION DU FORMULAIRE
+   ========================================================= */
+
+
+/* Champ en erreur */
+
+.page-contact .input-error {
+
+    border-color: var(--contact-rouge) !important;
+
+    background: #FFF8F8 !important;
+
+}
+
+
+/* Message d'erreur */
+
+.page-contact .form-error {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 6px;
+
+    color: var(--contact-rouge);
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12px;
+
+}
+
+
+/* Icône erreur */
+
+.page-contact .form-error i {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   MESSAGE DE SUCCÈS
+   ========================================================= */
+
+.page-contact .form-success {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(46, 125, 50, 0.2);
+
+    border-radius: 12px;
+
+    background: rgba(46, 125, 50, 0.08);
+
+    color: var(--contact-vert);
+
+}
+
+
+.page-contact .form-success > i {
+
+    margin-top: 2px;
+
+    font-size: 20px;
+
+}
+
+
+.page-contact .form-success strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+}
+
+
+.page-contact .form-success p {
+
+    margin: 0;
+
+    color: var(--contact-texte-clair);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* =========================================================
+   BOUTON ENVOI - ÉTAT CHARGEMENT
+   ========================================================= */
+
+.page-contact .btn-contact:disabled {
+
+    opacity: 0.75;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+.page-contact .btn-contact.sending {
+
+    pointer-events: none;
+
+}
