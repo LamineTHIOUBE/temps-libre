@@ -111,8 +111,8 @@ include('includes/header.php');
                         saveurs naturelles et les qualités nutritionnelles.
                     </p>
 
-                    <a href="apropos.php" class="btn-about">
-                        En savoir plus
+                    <a href="produits.php" class="btn-about">
+                        Découvrir
                     </a>
 
                 </div>

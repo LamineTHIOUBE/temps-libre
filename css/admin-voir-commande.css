@@ -1,0 +1,1154 @@
+/* =========================================================
+   TEMPS LIBRE - ADMIN - DÉTAIL COMMANDE
+========================================================= */
+
+:root {
+    --vert: #2E7D32;
+    --vert-fonce: #1B5E20;
+    --vert-clair: #E8F5E9;
+
+    --jaune: #FFC107;
+    --orange: #F57C00;
+    --rouge: #C62828;
+
+    --blanc: #FFFFFF;
+    --fond: #F7F9F7;
+    --gris-border: #E2E7E3;
+    --gris: #6B7280;
+    --texte: #333333;
+
+    --ombre: 0 4px 18px rgba(0, 0, 0, 0.06);
+    --rayon: 12px;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--fond);
+    color: var(--texte);
+
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.admin-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER ADMIN
+========================================================= */
+
+.admin-header {
+    width: 100%;
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 35px;
+
+    background: var(--blanc);
+
+    border-bottom: 1px solid var(--gris-border);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.admin-logo img {
+    width: 145px;
+    height: auto;
+    display: block;
+}
+
+
+/* Actions */
+
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Retour */
+
+.btn-retour,
+.btn-deconnexion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-retour {
+    color: var(--vert);
+    background: var(--vert-clair);
+}
+
+.btn-retour:hover {
+    color: var(--blanc);
+    background: var(--vert);
+}
+
+.btn-deconnexion {
+    color: var(--rouge);
+    background: #FDECEC;
+}
+
+.btn-deconnexion:hover {
+    color: var(--blanc);
+    background: var(--rouge);
+}
+
+
+/* Utilisateur */
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: 8px;
+    padding-left: 18px;
+
+    border-left: 1px solid var(--gris-border);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-user i {
+    color: var(--vert);
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL
+========================================================= */
+
+.admin-main {
+    width: 100%;
+
+    padding: 30px 35px 50px;
+
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TITRE
+========================================================= */
+
+.admin-title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.admin-title-block h1 {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0;
+
+    color: var(--vert-fonce);
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.admin-title-block h1 i {
+    color: var(--vert);
+}
+
+.admin-title-block p {
+    margin: 6px 0 0;
+
+    color: var(--gris);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   STATUT EN HAUT
+========================================================= */
+
+.commande-statut-header {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   BADGES STATUT
+========================================================= */
+
+.statut-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.statut-attente {
+    background: #FFF8E1;
+    color: #B77900;
+}
+
+.statut-confirmee {
+    background: var(--vert-clair);
+    color: var(--vert);
+}
+
+.statut-preparation {
+    background: #FFF3E0;
+    color: #E65100;
+}
+
+.statut-livree {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.statut-annulee {
+    background: #FFEBEE;
+    color: var(--rouge);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.commande-section {
+    margin-bottom: 22px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--gris-border);
+
+    border-radius: var(--rayon);
+
+    box-shadow: var(--ombre);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER SECTION
+========================================================= */
+
+.section-header {
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+
+    border-bottom: 1px solid var(--gris-border);
+
+    background: #FCFDFC;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0;
+
+    color: var(--texte);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.section-header h2 i {
+    color: var(--vert);
+}
+
+.section-header > span {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: var(--vert-clair);
+    color: var(--vert-fonce);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INFORMATIONS CLIENT
+========================================================= */
+
+.client-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0;
+
+    padding: 5px 22px 10px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-height: 78px;
+
+    padding: 16px 10px;
+
+    border-bottom: 1px solid #EEF1EF;
+}
+
+.detail-item:nth-last-child(-n + 2) {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: var(--gris);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.detail-item strong {
+    color: var(--texte);
+
+    font-size: 14px;
+}
+
+.detail-item a {
+    color: var(--vert);
+
+    text-decoration: none;
+}
+
+.detail-item a:hover {
+    color: var(--vert-fonce);
+    text-decoration: underline;
+}
+
+
+/* Adresse pleine largeur */
+
+.detail-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   TABLE PRODUITS
+========================================================= */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.commande-details-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+
+/* En-tête */
+
+.commande-details-table thead {
+    background: #F7F9F7;
+}
+
+.commande-details-table th {
+    padding: 14px 22px;
+
+    border-bottom: 1px solid var(--gris-border);
+
+    color: #5B6470;
+
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+/* Cellules */
+
+.commande-details-table td {
+    padding: 17px 22px;
+
+    border-bottom: 1px solid #EEF1EF;
+
+    color: var(--texte);
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.commande-details-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.commande-details-table tbody tr:hover {
+    background: #FAFCFA;
+}
+
+.commande-details-table td strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   QUANTITÉ
+========================================================= */
+
+.quantite-badge {
+    min-width: 32px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: var(--vert-clair);
+    color: var(--vert-fonce);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOTAL LIGNE
+========================================================= */
+
+.ligne-total {
+    color: var(--vert-fonce);
+
+    font-family: "Poppins", sans-serif;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ÉTAT VIDE
+========================================================= */
+
+.details-vide {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: var(--gris);
+}
+
+.details-vide i {
+    margin-bottom: 12px;
+
+    color: #B8C4BA;
+
+    font-size: 35px;
+}
+
+.details-vide p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RÉCAPITULATIF
+========================================================= */
+
+.recap-section {
+    max-width: 600px;
+
+    margin-left: auto;
+}
+
+
+/* Contenu */
+
+.recap-content {
+    padding: 10px 22px 18px;
+}
+
+
+/* Ligne */
+
+.recap-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #EEF1EF;
+
+    color: #59636E;
+
+    font-size: 14px;
+}
+
+.recap-line strong {
+    color: var(--texte);
+
+    font-size: 14px;
+}
+
+
+/* Total */
+
+.recap-total {
+    margin-top: 5px;
+
+    padding-top: 18px;
+
+    border-bottom: none;
+
+    color: var(--texte);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.recap-total strong {
+    color: var(--vert-fonce);
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   MÉTADONNÉES COMMANDE
+========================================================= */
+
+.commande-meta {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 8px 22px 20px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 15px;
+
+    border-right: 1px solid var(--gris-border);
+}
+
+.meta-item:last-child {
+    border-right: none;
+}
+
+.meta-item span {
+    color: var(--gris);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.meta-item strong {
+    color: var(--texte);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ACTION RETOUR
+========================================================= */
+
+.commande-actions {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: 5px;
+}
+
+.btn-retour-commandes {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.btn-retour-commandes:hover {
+    background: var(--vert-fonce);
+
+    color: var(--blanc);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETTE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-header {
+        padding: 12px 20px;
+    }
+
+    .admin-main {
+        padding: 25px 20px 40px;
+    }
+
+    .admin-title-block {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-title-block h1 {
+        font-size: 24px;
+    }
+
+    .admin-user {
+        display: none;
+    }
+
+    .commande-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meta-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .meta-item:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--gris-border);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-header {
+        min-height: 70px;
+
+        padding: 10px 15px;
+    }
+
+    .admin-logo img {
+        width: 115px;
+    }
+
+    .admin-header-actions {
+        gap: 6px;
+    }
+
+    .btn-retour,
+    .btn-deconnexion {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+
+        font-size: 0;
+    }
+
+    .btn-retour i,
+    .btn-deconnexion i {
+        font-size: 15px;
+    }
+
+    .admin-main {
+        padding: 20px 15px 35px;
+    }
+
+    .admin-title-block {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .admin-title-block h1 {
+        font-size: 21px;
+    }
+
+    .admin-title-block p {
+        font-size: 12px;
+    }
+
+    .commande-section {
+        margin-bottom: 16px;
+    }
+
+    .section-header {
+        min-height: 55px;
+
+        padding: 14px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 15px;
+    }
+
+    .client-details {
+        grid-template-columns: 1fr;
+
+        padding: 5px 15px 10px;
+    }
+
+    .detail-item {
+        min-height: auto;
+
+        padding: 13px 5px;
+    }
+
+    .detail-item:nth-last-child(-n + 2) {
+        border-bottom: 1px solid #EEF1EF;
+    }
+
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+
+    .detail-full {
+        grid-column: auto;
+    }
+
+    .commande-details-table th,
+    .commande-details-table td {
+        padding: 13px 15px;
+    }
+
+    .recap-section {
+        max-width: none;
+    }
+
+    .recap-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .commande-meta {
+        grid-template-columns: 1fr;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .meta-item {
+        border-right: none;
+        border-bottom: 1px solid var(--gris-border);
+    }
+
+    .meta-item:last-child {
+        border-bottom: none;
+    }
+
+    .btn-retour-commandes {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .admin-title-block h1 {
+        font-size: 19px;
+    }
+
+    .statut-badge {
+        font-size: 10px;
+
+        padding: 6px 10px;
+    }
+
+    .section-header h2 {
+        font-size: 14px;
+    }
+}
+
+/* =====================================================
+   MODIFICATION DU STATUT
+===================================================== */
+
+.statut-commande-section {
+    margin-top: 25px;
+}
+
+.statut-form {
+    width: 100%;
+}
+
+.statut-form-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    background: #fffdf7;
+    border-radius: 10px;
+}
+
+.statut-select-container {
+    flex: 1;
+}
+
+.statut-select-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.statut-select-container .form-select {
+    min-height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.statut-select-container .form-select:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.15);
+}
+
+.statut-button-container {
+    flex-shrink: 0;
+}
+
+.btn-modifier-statut {
+    min-height: 48px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2e7d32;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-modifier-statut:hover {
+    background: #1b5e20;
+    transform: translateY(-1px);
+}
+
+.btn-modifier-statut i {
+    margin-right: 7px;
+}
+
+
+/* =====================================================
+   MESSAGES DE SUCCÈS / ERREUR
+===================================================== */
+
+.alert {
+    margin: 20px 0;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert i {
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .statut-form-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .statut-button-container {
+        width: 100%;
+    }
+
+    .btn-modifier-statut {
+        width: 100%;
+    }
+
+}
+
+
+/* ========================================
+   MESSAGES DE NOTIFICATION
+======================================== */
+
+.alert {
+    margin: 20px 0;
+    padding: 15px 18px;
+    border-radius: 8px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+
+.alert-success {
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+}
+
+.alert-danger {
+    color: #b71c1c;
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+}
+
+.alert i {
+    margin-right: 8px;
+}
+
+
+/* ========================================
+   VERSION IMPRESSION
+======================================== */
+
+@media print {
+
+    /* ----------------------------------------
+       ÉLÉMENTS À MASQUER
+    ---------------------------------------- */
+
+    .admin-header {
+        display: none !important;
+    }
+
+    .statut-commande-section {
+        display: none !important;
+    }
+
+    .commande-actions {
+        display: none !important;
+    }
+
+    .btn-imprimer-commande {
+        display: none !important;
+    }
+
+    .btn-retour-commandes {
+        display: none !important;
+    }
+
+    /* ----------------------------------------
+       STRUCTURE DE LA PAGE
+    ---------------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+    }
+
+    .admin-container {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+    }
+
+    .admin-main {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ----------------------------------------
+       TITRE DE LA COMMANDE
+    ---------------------------------------- */
+
+    .admin-title-block {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* ----------------------------------------
+       SECTIONS
+    ---------------------------------------- */
+
+    .commande-section {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* ----------------------------------------
+       TABLE DES PRODUITS
+    ---------------------------------------- */
+
+    .table-responsive {
+        overflow: visible !important;
+    }
+
+    .commande-details-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .commande-details-table th,
+    .commande-details-table td {
+        border: 1px solid #cccccc !important;
+        padding: 8px !important;
+    }
+
+    .commande-details-table th {
+        background: #f2f2f2 !important;
+        color: #222222 !important;
+    }
+
+    /* ----------------------------------------
+       ÉVITER LES OMBRES
+    ---------------------------------------- */
+
+    .commande-section,
+    .client-details,
+    .recap-content,
+    .commande-meta {
+        box-shadow: none !important;
+    }
+
+    /* ----------------------------------------
+       IMPRESSION DES COULEURS
+    ---------------------------------------- */
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* ----------------------------------------
+       FORMAT A4
+    ---------------------------------------- */
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}

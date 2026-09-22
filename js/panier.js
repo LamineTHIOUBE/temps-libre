@@ -3,247 +3,381 @@
 // =====================================
 
 
-// Récupération panier
+// =====================================
+// RÉCUPÉRATION DU PANIER
+// =====================================
 
 let panier = JSON.parse(localStorage.getItem("panier")) || [];
 
 
-// Livraison
+// =====================================
+// LIVRAISON
+// =====================================
 
 const LIVRAISON = 1000;
 
 
+// =====================================
+// AFFICHER LE PANIER
+// =====================================
 
-// Afficher panier
+function afficherPanier() {
 
-function afficherPanier(){
+    const container = document.getElementById("panier-container");
+    const panierVide = document.getElementById("panier-vide");
 
+    if (!container) return;
 
-const tbody = document.getElementById("cart-items");
 
+    // Vider le conteneur
+    container.innerHTML = "";
 
-if(!tbody) return;
 
+    // =================================
+    // PANIER VIDE
+    // =================================
 
+    if (panier.length === 0) {
 
-tbody.innerHTML="";
+        if (panierVide) {
+            panierVide.style.display = "block";
+        }
 
+        mettreAJourCompteur();
 
-let sousTotal = 0;
+        return;
+    }
 
 
+    // Cacher le message panier vide
+    if (panierVide) {
+        panierVide.style.display = "none";
+    }
 
-panier.forEach((produit,index)=>{
 
+    // =================================
+    // CALCUL DU SOUS-TOTAL
+    // =================================
 
-let totalProduit = produit.prix * produit.quantite;
+    let sousTotal = 0;
 
 
-sousTotal += totalProduit;
+    panier.forEach((produit, index) => {
 
+        const prix = parseFloat(produit.prix) || 0;
+        const quantite = parseInt(produit.quantite) || 1;
 
+        const totalProduit = prix * quantite;
 
-tbody.innerHTML += `
+        sousTotal += totalProduit;
 
 
-<tr>
+        // =================================
+        // IMAGE
+        // =================================
 
+        let imageProduit = "";
 
-<td>
+        if (produit.image) {
 
-<div class="d-flex align-items-center gap-3">
+            imageProduit =
+                `images/${encodeURIComponent(produit.image)}`;
 
+        } else {
 
-<img src="${produit.image}" width="70">
+            imageProduit =
+                "images/produit-placeholder.png";
 
+        }
 
-<div>
 
-${produit.nom}
+        // =================================
+        // CARTE PRODUIT
+        // =================================
 
-</div>
+        container.innerHTML += `
 
+            <div class="panier-produit">
 
-</div>
+                <div class="panier-produit-image">
 
+                    <img
+                        src="${imageProduit}"
+                        alt="${produit.nom}"
+                    >
 
-</td>
+                </div>
 
 
+                <div class="panier-produit-info">
 
-<td>
+                    <h3>
+                        ${produit.nom}
+                    </h3>
 
-${produit.prix.toLocaleString()} FCFA
+                    <p class="panier-produit-prix">
+                        ${prix.toLocaleString("fr-FR")} FCFA
+                    </p>
 
-</td>
+                </div>
 
 
+                <div class="panier-quantite">
 
+                    <button
+                        type="button"
+                        onclick="modifierQuantite(${index}, -1)"
+                        aria-label="Diminuer la quantité"
+                    >
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
 
-<td>
 
+                    <span>
+                        ${quantite}
+                    </span>
 
-<button onclick="modifierQuantite(${index},-1)">
--
-</button>
 
+                    <button
+                        type="button"
+                        onclick="modifierQuantite(${index}, 1)"
+                        aria-label="Augmenter la quantité"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
 
+                </div>
 
-${produit.quantite}
 
+                <div class="panier-produit-total">
 
+                    ${totalProduit.toLocaleString("fr-FR")} FCFA
 
-<button onclick="modifierQuantite(${index},1)">
-+
-</button>
+                </div>
 
 
-</td>
+                <button
+                    type="button"
+                    class="btn-supprimer"
+                    onclick="supprimerProduit(${index})"
+                    aria-label="Supprimer le produit"
+                >
 
+                    <i class="fa-solid fa-trash"></i>
 
+                </button>
 
+            </div>
 
-<td>
+        `;
 
-${totalProduit.toLocaleString()} FCFA
+    });
 
-</td>
 
+    // =================================
+    // RÉCAPITULATIF
+    // =================================
 
+    const total = sousTotal + LIVRAISON;
 
 
-<td>
+    container.innerHTML += `
 
+        <div class="panier-recapitulatif">
 
-<button onclick="supprimerProduit(${index})">
+            <h2>
+                Récapitulatif
+            </h2>
 
-<i class="fa-solid fa-trash"></i>
 
-</button>
+            <div class="recap-ligne">
 
+                <span>
+                    Sous-total
+                </span>
 
-</td>
+                <strong>
+                    ${sousTotal.toLocaleString("fr-FR")} FCFA
+                </strong>
 
+            </div>
 
 
-</tr>
+            <div class="recap-ligne">
 
+                <span>
+                    Livraison
+                </span>
 
-`;
+                <strong>
+                    ${LIVRAISON.toLocaleString("fr-FR")} FCFA
+                </strong>
 
+            </div>
 
 
-});
+            <div class="recap-separation"></div>
 
 
+            <div class="recap-total">
 
+                <span>
+                    Total
+                </span>
 
-document.getElementById("subtotal").innerHTML =
-sousTotal.toLocaleString()+" FCFA";
+                <strong>
+                    ${total.toLocaleString("fr-FR")} FCFA
+                </strong>
 
+            </div>
 
 
-document.getElementById("shipping").innerHTML =
-LIVRAISON.toLocaleString()+" FCFA";
+           <a href="order.php" class="btn-commander">
 
+                <i class="fa-solid fa-bag-shopping"></i>
 
+                Passer la commande
 
-document.getElementById("total").innerHTML =
-(sousTotal+LIVRAISON).toLocaleString()+" FCFA";
+            </a>
 
 
+            <a
+                href="produits.php"
+                class="continuer-achats"
+            >
 
-mettreAJourCompteur();
+                <i class="fa-solid fa-arrow-left"></i>
 
+                Continuer mes achats
+
+            </a>
+
+        </div>
+
+
+
+
+    // =================================
+    // COMPTEUR DU PANIER
+    // =================================
+
+    mettreAJourCompteur();
 
 }
 
 
+// =====================================
+// MODIFIER LA QUANTITÉ
+// =====================================
+
+function modifierQuantite(index, valeur) {
+
+    if (!panier[index]) return;
 
 
-// Modifier quantité
-
-function modifierQuantite(index,valeur){
-
-
-panier[index].quantite += valeur;
+    panier[index].quantite =
+        parseInt(panier[index].quantite) + valeur;
 
 
+    // Minimum = 1
+    if (panier[index].quantite < 1) {
 
-if(panier[index].quantite <=0){
+        panier[index].quantite = 1;
 
-panier[index].quantite=1;
-
-}
-
-
-
-sauvegarderPanier();
+    }
 
 
-afficherPanier();
+    sauvegarderPanier();
 
-
-}
-
-
-
-
-// Supprimer produit
-
-function supprimerProduit(index){
-
-
-panier.splice(index,1);
-
-
-sauvegarderPanier();
-
-
-afficherPanier();
-
+    afficherPanier();
 
 }
 
 
+// =====================================
+// SUPPRIMER UN PRODUIT
+// =====================================
+
+function supprimerProduit(index) {
+
+    if (!panier[index]) return;
 
 
-// Compteur panier
-
-function mettreAJourCompteur(){
+    panier.splice(index, 1);
 
 
-let compteur = document.getElementById("cart-count");
+    sauvegarderPanier();
 
-
-if(!compteur) return;
-
-
-
-let total = panier.reduce(
-(acc,p)=> acc+p.quantite,
-0
-);
-
-
-
-compteur.innerHTML = total;
-
-
+    afficherPanier();
 
 }
 
 
+// =====================================
+// SAUVEGARDER LE PANIER
+// =====================================
 
-// Chargement automatique
+function sauvegarderPanier() {
+
+    localStorage.setItem(
+        "panier",
+        JSON.stringify(panier)
+    );
+
+}
+
+
+// =====================================
+// COMPTEUR PANIER
+// =====================================
+
+function mettreAJourCompteur() {
+
+    const compteur =
+        document.getElementById("cart-count");
+
+
+    if (!compteur) return;
+
+
+    const total = panier.reduce(
+        (acc, produit) => {
+
+            return acc + (
+                parseInt(produit.quantite) || 0
+            );
+
+        },
+        0
+    );
+
+
+    compteur.textContent = total;
+
+
+    // Cacher le compteur lorsqu'il est à zéro
+    if (total > 0) {
+
+        compteur.style.display = "flex";
+
+    } else {
+
+        compteur.style.display = "none";
+
+    }
+
+}
+
+
+// =====================================
+// CHARGEMENT AUTOMATIQUE
+// =====================================
 
 document.addEventListener(
-"DOMContentLoaded",
-()=>{
+    "DOMContentLoaded",
+    function () {
 
+        afficherPanier();
 
-afficherPanier();
-
-
-}
+    }
 );

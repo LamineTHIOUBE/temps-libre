@@ -1,0 +1,548 @@
+/* =========================================
+   TEMPS LIBRE - PAGE COMMANDE
+========================================= */
+
+:root {
+    --vert-principal: #2E7D32;
+    --vert-fonce: #1B5E20;
+    --jaune-mangue: #FFC107;
+    --orange: #F57C00;
+    --rouge: #C62828;
+    --fond: #FFFDF7;
+    --texte: #333333;
+    --gris: #777777;
+    --bordure: #e5e5e5;
+    --blanc: #ffffff;
+}
+
+
+/* =========================================
+   BASE
+========================================= */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--texte);
+    background: var(--fond);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.commande-page {
+    padding: 70px 0 90px;
+    min-height: 700px;
+}
+
+
+/* =========================================
+   EN-TÊTE
+========================================= */
+
+.commande-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.commande-sur-titre {
+    display: inline-block;
+    color: var(--vert-principal);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.commande-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--vert-fonce);
+}
+
+.commande-header p {
+    color: var(--gris);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================
+   LAYOUT PRINCIPAL
+========================================= */
+
+.commande-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
+    gap: 35px;
+    align-items: start;
+}
+
+
+/* =========================================
+   BLOCS
+========================================= */
+
+.commande-formulaire,
+.commande-recapitulatif {
+    background: var(--blanc);
+    border: 1px solid var(--bordure);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   TITRES DES BLOCS
+========================================= */
+
+.commande-bloc-titre {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--bordure);
+}
+
+.commande-bloc-icone {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--vert-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.commande-bloc-titre h2 {
+    margin: 0 0 5px;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+}
+
+.commande-bloc-titre p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FORMULAIRE
+========================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texte);
+}
+
+.form-group label span {
+    color: var(--rouge);
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vert-principal);
+    font-size: 15px;
+}
+
+.input-container input {
+    width: 100%;
+    height: 52px;
+    padding: 0 18px 0 47px;
+    border: 1px solid var(--bordure);
+    border-radius: 10px;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    color: var(--texte);
+    background: #fff;
+    transition: all 0.25s ease;
+}
+
+.input-container input::placeholder {
+    color: #aaa;
+}
+
+.input-container input:focus {
+    border-color: var(--vert-principal);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+
+/* =========================================
+   BOUTON CONFIRMER
+========================================= */
+
+.btn-confirmer-commande {
+    width: 100%;
+    border: none;
+    min-height: 54px;
+    padding: 14px 20px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background: var(--vert-principal);
+    color: var(--blanc);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-confirmer-commande i {
+    margin-right: 8px;
+}
+
+.btn-confirmer-commande:hover {
+    background: var(--vert-fonce);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(46, 125, 50, 0.25);
+}
+
+
+/* =========================================
+   PRODUITS DU RÉCAPITULATIF
+========================================= */
+
+#commande-produits {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.commande-produit {
+    display: grid;
+    grid-template-columns: 65px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.commande-produit-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.commande-produit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commande-produit-info h3 {
+    margin: 0 0 4px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texte);
+}
+
+.commande-produit-info p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.commande-produit-prix {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vert-principal);
+}
+
+
+/* =========================================
+   PANIER VIDE
+========================================= */
+
+.commande-vide {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.commande-vide i {
+    font-size: 42px;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.commande-vide p {
+    color: var(--gris);
+    margin-bottom: 10px;
+}
+
+.commande-vide a {
+    color: var(--vert-principal);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.commande-vide a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   TOTAUX
+========================================= */
+
+.commande-totaux {
+    margin-top: 25px;
+}
+
+.commande-total-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 13px;
+    font-size: 14px;
+}
+
+.commande-total-ligne span {
+    color: var(--gris);
+}
+
+.commande-total-ligne strong {
+    color: var(--texte);
+}
+
+.commande-separateur {
+    height: 1px;
+    background: var(--bordure);
+    margin: 18px 0;
+}
+
+.commande-total-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.commande-total-final span {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+}
+
+.commande-total-final strong {
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--vert-principal);
+}
+
+
+/* =========================================
+   RETOUR AU PANIER
+========================================= */
+
+.retour-panier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    color: var(--gris);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.retour-panier:hover {
+    color: var(--vert-principal);
+}
+
+
+/* =========================================
+   RESPONSIVE TABLETTE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .commande-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .commande-recapitulatif {
+        order: -1;
+    }
+
+    .commande-header h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .commande-page {
+        padding: 45px 0 60px;
+    }
+
+    .commande-header {
+        margin-bottom: 35px;
+    }
+
+    .commande-header h1 {
+        font-size: 30px;
+    }
+
+    .commande-header p {
+        font-size: 14px;
+    }
+
+    .commande-formulaire,
+    .commande-recapitulatif {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .commande-bloc-titre h2 {
+        font-size: 18px;
+    }
+
+    .commande-produit {
+        grid-template-columns: 55px 1fr;
+    }
+
+    .commande-produit-image {
+        width: 55px;
+        height: 55px;
+    }
+
+    .commande-produit-prix {
+        grid-column: 2;
+        text-align: left;
+        margin-top: -7px;
+    }
+
+}
+
+
+/* =========================================
+   PETITS ÉCRANS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .commande-page {
+        padding-top: 35px;
+    }
+
+    .commande-formulaire,
+    .commande-recapitulatif {
+        padding: 18px;
+    }
+
+    .commande-header h1 {
+        font-size: 26px;
+    }
+
+    .commande-bloc-titre {
+        gap: 10px;
+    }
+
+    .commande-bloc-icone {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+}
+
+
+/* =========================================
+   MESSAGES COMMANDE
+========================================= */
+
+.commande-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+
+/* Message succès */
+
+.commande-message-succes {
+    background: #eaf7ec;
+    border: 1px solid #b9dfbf;
+    color: #1B5E20;
+}
+
+.commande-message-succes > i {
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.commande-message-succes strong {
+    font-weight: 700;
+}
+
+.commande-message-succes p {
+    margin: 5px 0 0;
+}
+
+
+/* Message erreur */
+
+.commande-message-erreur {
+    background: #fff0f0;
+    border: 1px solid #f0b5b5;
+    color: #C62828;
+}
+
+.commande-message-erreur i {
+    font-size: 22px;
+}

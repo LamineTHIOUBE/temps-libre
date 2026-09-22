@@ -1,0 +1,1502 @@
+/* =========================================================
+   TEMPS LIBRE — TABLEAU DE BORD ADMINISTRATION
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --vert: #2E7D32;
+    --jaune: #FFC107;
+    --rouge: #C62828;
+    --orange: #F57C00;
+
+    --fond: #FFFDF7;
+    --blanc: #FFFFFF;
+
+    --texte: #333333;
+    --gris: #777777;
+    --gris-clair: #999999;
+
+    --bordure: #E8E8E8;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    background: var(--fond);
+
+    color: var(--texte);
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
+
+.dashboard {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: var(--blanc);
+
+    border-bottom: 1px solid var(--bordure);
+
+}
+
+
+/* =========================================================
+   LOGO / MARQUE
+   ========================================================= */
+
+.dashboard-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.dashboard-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.dashboard-logo img {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: contain;
+
+}
+
+
+.dashboard-brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.3;
+
+}
+
+
+.dashboard-brand-text strong {
+
+    color: var(--vert);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 18px;
+
+}
+
+
+.dashboard-brand-text span {
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   UTILISATEUR
+   ========================================================= */
+
+.dashboard-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.dashboard-user-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: right;
+
+    line-height: 1.3;
+
+}
+
+
+.dashboard-user-info span {
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+}
+
+
+.dashboard-user-info strong {
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   BOUTON DÉCONNEXION
+   ========================================================= */
+
+.btn-logout {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 16px;
+
+    border: 1px solid var(--rouge);
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: var(--rouge);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+}
+
+
+.btn-logout:hover {
+
+    background: var(--rouge);
+
+    color: var(--blanc);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL
+   ========================================================= */
+
+.dashboard-main {
+
+    width: min(1400px, 90%);
+
+    margin: 0 auto;
+
+    padding: 50px 0 70px;
+
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.dashboard-title {
+
+    margin-bottom: 35px;
+
+}
+
+
+.dashboard-title > span {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--vert);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.dashboard-title h1 {
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 32px;
+
+    line-height: 1.25;
+
+}
+
+
+.dashboard-title p {
+
+    margin-top: 8px;
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   STATISTIQUES
+   ========================================================= */
+
+.dashboard-stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   CARTE STATISTIQUE
+   ========================================================= */
+
+.dashboard-stat-card {
+
+    min-height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+
+    transition: 0.3s ease;
+
+}
+
+
+.dashboard-stat-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.07);
+
+}
+
+
+/* =========================================================
+   ICÔNES STATISTIQUES
+   ========================================================= */
+
+.dashboard-stat-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 19px;
+
+}
+
+
+/* Total */
+
+.dashboard-stat-icon.total {
+
+    background: rgba(51, 51, 51, 0.08);
+
+    color: var(--texte);
+
+}
+
+
+/* Nouveau */
+
+.dashboard-stat-icon.nouveau {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #B88600;
+
+}
+
+
+/* Lu */
+
+.dashboard-stat-icon.lu {
+
+    background: rgba(33, 150, 243, 0.10);
+
+    color: #1976D2;
+
+}
+
+
+/* Traité */
+
+.dashboard-stat-icon.traite {
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: var(--vert);
+
+}
+
+
+/* =========================================================
+   CONTENU STATISTIQUE
+   ========================================================= */
+
+.dashboard-stat-content {
+
+    min-width: 0;
+
+}
+
+
+.dashboard-stat-content span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.dashboard-stat-content strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+}
+
+
+.dashboard-stat-content small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--gris-clair);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   ACCÈS RAPIDES
+   ========================================================= */
+
+.quick-access {
+
+    margin-top: 50px;
+
+}
+
+
+/* =========================================================
+   TITRE SECTION
+   ========================================================= */
+
+.section-heading {
+
+    margin-bottom: 22px;
+
+}
+
+
+.section-heading > span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--vert);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.section-heading h2 {
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================================
+   GRILLE ACCÈS RAPIDES
+   ========================================================= */
+
+.quick-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   CARTE ACCÈS RAPIDE
+   ========================================================= */
+
+.quick-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 120px;
+
+    padding: 22px;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 16px;
+
+    color: var(--texte);
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+}
+
+
+.quick-card:hover {
+
+    border-color: rgba(46, 125, 50, 0.35);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =========================================================
+   ICÔNE ACCÈS RAPIDE
+   ========================================================= */
+
+.quick-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: var(--vert);
+
+    font-size: 18px;
+
+}
+
+
+.quick-card h3 {
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+}
+
+
+.quick-card p {
+
+    margin-top: 4px;
+
+    max-width: 220px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   FLÈCHE
+   ========================================================= */
+
+.quick-arrow {
+
+    margin-left: auto;
+
+    color: #BBBBBB;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.quick-card:hover .quick-arrow {
+
+    color: var(--vert);
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-stats {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .quick-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-header {
+
+        height: auto;
+
+        min-height: 75px;
+
+        padding: 15px 5%;
+
+    }
+
+
+    .dashboard-user {
+
+        gap: 10px;
+
+    }
+
+
+    .dashboard-user-info {
+
+        display: none;
+
+    }
+
+
+    .btn-logout {
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    .dashboard-main {
+
+        width: 92%;
+
+        padding-top: 35px;
+
+    }
+
+
+    .dashboard-title h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .dashboard-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .quick-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETIT MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .dashboard-brand-text strong {
+
+        font-size: 16px;
+
+    }
+
+
+    .dashboard-logo,
+    .dashboard-logo img {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .dashboard-stat-card {
+
+        padding: 18px;
+
+    }
+
+
+    .dashboard-title h1 {
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CARTES STATISTIQUES CLIQUABLES
+   ========================================================= */
+
+.dashboard-stat-card {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DERNIERS MESSAGES
+   ========================================================= */
+
+.recent-messages {
+
+    margin-top: 50px;
+
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.recent-messages-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.recent-messages-header > div > span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--vert);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.recent-messages-header h2 {
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 22px;
+
+}
+
+
+.recent-messages-header p {
+
+    margin-top: 5px;
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   BOUTON TOUS LES MESSAGES
+   ========================================================= */
+
+.btn-all-messages {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border: 1px solid var(--vert);
+
+    border-radius: 25px;
+
+    color: var(--vert);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+}
+
+
+.btn-all-messages:hover {
+
+    background: var(--vert);
+
+    color: var(--blanc);
+
+}
+
+
+.btn-all-messages i {
+
+    transition: 0.3s ease;
+
+}
+
+
+.btn-all-messages:hover i {
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.recent-messages-card {
+
+    overflow: hidden;
+
+    background: var(--blanc);
+
+    border: 1px solid var(--bordure);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* =========================================================
+   LIGNE MESSAGE
+   ========================================================= */
+
+.recent-message-row {
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        minmax(180px, 1fr)
+        minmax(150px, 1fr)
+        90px
+        90px
+        20px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 22px;
+
+    border-bottom: 1px solid var(--bordure);
+
+    color: var(--texte);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.recent-message-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.recent-message-row:hover {
+
+    background: #FFFEF8;
+
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.recent-avatar {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: var(--vert);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.recent-message-info {
+
+    min-width: 0;
+
+}
+
+
+.recent-message-info strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--texte);
+
+    font-size: 13px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.recent-message-info span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   SUJET
+   ========================================================= */
+
+.recent-message-subject {
+
+    min-width: 0;
+
+}
+
+
+.recent-message-subject strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--texte);
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.recent-message-date {
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   STATUT
+   ========================================================= */
+
+.recent-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.recent-status.nouveau {
+
+    background: rgba(255, 193, 7, 0.15);
+
+    color: #9A7200;
+
+}
+
+
+.recent-status.lu {
+
+    background: rgba(33, 150, 243, 0.10);
+
+    color: #1976D2;
+
+}
+
+
+.recent-status.traite {
+
+    background: rgba(46, 125, 50, 0.10);
+
+    color: var(--vert);
+
+}
+
+
+/* =========================================================
+   FLÈCHE
+   ========================================================= */
+
+.recent-arrow {
+
+    color: #BBBBBB;
+
+    font-size: 11px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.recent-message-row:hover .recent-arrow {
+
+    color: var(--vert);
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================================
+   AUCUN MESSAGE
+   ========================================================= */
+
+.recent-empty {
+
+    padding: 55px 20px;
+
+    text-align: center;
+
+}
+
+
+.recent-empty > i {
+
+    color: #CCCCCC;
+
+    font-size: 35px;
+
+}
+
+
+.recent-empty h3 {
+
+    margin-top: 12px;
+
+    color: var(--texte);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+}
+
+
+.recent-empty p {
+
+    margin-top: 5px;
+
+    color: var(--gris);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .recent-message-row {
+
+        grid-template-columns:
+            40px
+            minmax(150px, 1fr)
+            minmax(130px, 1fr)
+            80px
+            20px;
+
+    }
+
+
+    .recent-message-row > div:nth-child(5) {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .recent-messages-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .recent-message-row {
+
+        grid-template-columns:
+            40px
+            1fr
+            20px;
+
+        gap: 12px;
+
+        padding: 15px;
+
+    }
+
+
+    .recent-message-subject,
+    .recent-message-date,
+    .recent-status {
+
+        display: none;
+
+    }
+
+
+    .recent-message-row > div:nth-child(2) {
+
+        min-width: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ALERTE NOUVEAUX MESSAGES
+   ========================================================= */
+
+.new-messages-alert {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+    padding: 18px 22px;
+
+    background: rgba(255, 193, 7, 0.08);
+
+    border: 1px solid rgba(255, 193, 7, 0.35);
+
+    border-radius: 16px;
+
+}
+
+
+/* =========================================================
+   ICÔNE
+   ========================================================= */
+
+.new-messages-alert-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(255, 193, 7, 0.18);
+
+    color: #B88600;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.new-messages-alert-content {
+
+    flex: 1;
+
+}
+
+
+.new-messages-alert-content strong {
+
+    display: block;
+
+    color: #333333;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+}
+
+
+.new-messages-alert-content p {
+
+    margin-top: 4px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   BOUTON
+   ========================================================= */
+
+.new-messages-alert-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 15px;
+
+    border-radius: 22px;
+
+    background: #2E7D32;
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+}
+
+
+.new-messages-alert-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.new-messages-alert-button i {
+
+    transition: 0.3s ease;
+
+}
+
+
+.new-messages-alert-button:hover i {
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .new-messages-alert {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        padding: 16px;
+
+    }
+
+
+    .new-messages-alert-content {
+
+        width: calc(100% - 60px);
+
+    }
+
+
+    .new-messages-alert-button {
+
+        margin-left: 57px;
+
+    }
+
+}

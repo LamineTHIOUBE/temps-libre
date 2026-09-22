@@ -71,7 +71,7 @@ include('includes/header.php');
 
         <div class="hero-buttons">
 
-           <a href="products.php" class="btn btn-success">
+           <a href="produits.php" class="btn btn-success">
                Découvrir nos produits
            </a>
 
@@ -413,7 +413,7 @@ include('includes/header.php');
 
         <div class="text-center mt-5">
 
-            <a href="products.php" class="btn-all-products">
+            <a href="produits.php" class="btn-all-products">
 
                 Voir tous les produits
 

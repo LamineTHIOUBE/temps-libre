@@ -7,6 +7,20 @@
    require_once __DIR__ . '/auth.php';
    require_once __DIR__ . '/../config/databases.php';
 
+   /* =========================================================
+   PROTECTION CSRF
+   ========================================================= */
+
+   if (empty($_SESSION['csrf_token'])) {
+
+    $_SESSION['csrf_token'] = bin2hex(
+        random_bytes(32)
+    );
+
+}
+
+    $csrfToken = $_SESSION['csrf_token'];
+
 
 /* =========================================================
    RÉCUPÉRER L'ID DU MESSAGE
@@ -33,13 +47,25 @@ if (!$id) {
 
 
 
-/* =========================================================
-   ACTIONS SUR LE MESSAGE
-   ========================================================= */
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $action = $_POST["action"] ?? "";
+
+    $token = $_POST["csrf_token"] ?? "";
+
+
+    /* =====================================================
+       VÉRIFICATION CSRF
+       ===================================================== */
+
+       if (
+        empty($csrfToken)
+        || !hash_equals($csrfToken, $token)
+    ) {
+
+        die("Requête non autorisée.");
+
+    }
 
 
     /* =====================================================
@@ -527,6 +553,12 @@ if ($message["statut"] === "nouveau") {
             value="traiter"
         >
 
+        <input
+    type="hidden"
+    name="csrf_token"
+    value="<?= htmlspecialchars($csrfToken) ?>"
+            >
+
         <button
             type="submit"
             class="btn-traiter"
@@ -554,6 +586,12 @@ if ($message["statut"] === "nouveau") {
         name="action"
         value="supprimer"
     >
+
+    <input
+    type="hidden"
+    name="csrf_token"
+    value="<?= htmlspecialchars($csrfToken) ?>"
+      >
 
     <button
         type="submit"

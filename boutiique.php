@@ -1,6 +1,6 @@
 <?php
 
-require "config/database.php";
+require "config/databases.php";
 
 
 $sql = "SELECT * FROM produits";
@@ -49,7 +49,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <!-- CSS principal -->
 
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -59,128 +59,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 
-<!-- ================================
-HEADER
-================================ -->
-
-
-<header class="header">
-
-
-<nav class="navbar navbar-expand-lg bg-white">
-
-
-<div class="container">
-
-
-<!-- Logo -->
-
-<a class="navbar-brand" href="index.php">
-
-
-<img src="assets/images/logo.png" 
-alt="Temps Libre"
-class="logo">
-
-
-</a>
-
-
-
-
-<button 
-class="navbar-toggler menu-toggle"
-type="button">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-
-
-
-<div class="collapse navbar-collapse menu-principal">
-
-
-<ul class="navbar-nav mx-auto">
-
-
-<li class="nav-item">
-<a class="nav-link" href="index.php">
-Accueil
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="apropos.php">
-À propos
-</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="produits.php">
-Produits
-</a>
-</li>
-
-
-
-<li class="nav-item">
-<a class="nav-link" href="contact.php">
-Contact
-</a>
-</li>
-
-
-</ul>
-
-
-
-
-<!-- Panier -->
-
-
-<div class="cart-area">
-
-
-<a href="panier.php" class="cart-icon">
-
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-
-<span id="cart-count">
-0
-</span>
-
-
-</a>
-
-
-
-<a href="panier.php" 
-class="btn commander">
-
-Commander
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</nav>
-
-
-</header>
+<?php
+include('includes/header.php');
+?>
 
 
 
@@ -309,24 +190,7 @@ Ajouter au panier
 
 
 
-<!-- FOOTER -->
 
-
-<footer>
-
-
-<div class="container text-center">
-
-
-<p>
-© Temps Libre - Tous droits réservés
-</p>
-
-
-</div>
-
-
-</footer>
 
 
 
@@ -335,9 +199,13 @@ Ajouter au panier
 
 <!-- JS -->
 
-<script src="assets/js/produits.js"></script>
+<script src="js/produits.js"></script>
 
-<script src="assets/js/script.js"></script>
+<script src="js/script.js"></script>
+
+
+
+<?php include 'includes/footer.php'; ?>
 
 
 
